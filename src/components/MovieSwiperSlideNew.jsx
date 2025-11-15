@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { fetchdataBase } from "../redux/slice/base.serverSlice";
 import { useDispatch, useSelector } from "react-redux";
 import absolutecinema from "../assets/absolutecinema.jpg";
+import { useNavigate } from "react-router-dom";
 
 const MovieSwiperSlideNew = () => {
   const dispatch = useDispatch();
 const { data, loading, error } = useSelector((state) => state.server);
-
-
+const navigate = useNavigate()
   useEffect(() => {
     dispatch(fetchdataBase());
   }, [dispatch]);
@@ -31,6 +31,7 @@ const { data, loading, error } = useSelector((state) => state.server);
         {data?.map((e) => (
           <div
             key={e.id}
+            onClick={() => navigate(`/movie/${e.id}`)}
             className="relative w-[400px] h-[250px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer flex-shrink-0"
           >
             {/* Background image */}
