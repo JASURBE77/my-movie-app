@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { fetchdataBase } from "../redux/slice/base.serverSlice";
 import { useDispatch, useSelector } from "react-redux";
+import absolutecinema from "../assets/absolutecinema.jpg";
 
 const MovieSwiperSlideNew = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,11 @@ const { data, loading, error } = useSelector((state) => state.server);
     );
 
   return (
-    <div className="overflow-x-auto scrollbar-hide py-5 px-2">
+  <div className="container">
+            <h2 className="font-bold text-2xl md:text-3xl mb-6 text-white">
+        Смотреть сейчас
+      </h2>
+      <div className="overflow-x-auto scrollbar-hide py-5 px-2">
       <div className="flex gap-4">
         {data?.map((e) => (
           <div
@@ -30,7 +35,7 @@ const { data, loading, error } = useSelector((state) => state.server);
           >
             {/* Background image */}
             <img
-              src={e.thumbnail}
+              src={absolutecinema}
               alt={e.title}
               className="w-full h-full object-cover"
             />
@@ -63,6 +68,7 @@ const { data, loading, error } = useSelector((state) => state.server);
         ))}
       </div>
     </div>
+  </div>
   );
 };
 

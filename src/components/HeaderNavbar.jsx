@@ -3,6 +3,7 @@ import Logo from '../assets/Logo.svg'
 import { RiTranslate2 } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5";
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 const HeaderNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,13 +40,15 @@ const HeaderNavbar = () => {
                           <option>VScode</option>
                           <option>Other</option>
                         </select>
+                       <Link to="/login">
                         <button className='bg-red-600 text-white px-4 py-2 rounded'>Войти</button>
+                       </Link>
                       </div>
                     </div>
                     <div className='flex items-center  md:hidden mt-2'>
                                                     <input 
-                    type="email" 
-                    placeholder="Адрес электронной почты" 
+                    type="text" 
+                    placeholder="search . . ." 
                     className='p-2 rounded-sm w-full text-white border-2 border-base-300 bg-black focus:outline-none'
                   />
                   <IoSearch className='text-xl hover:text-gray-300 relative -ml-10 cursor-pointer' />

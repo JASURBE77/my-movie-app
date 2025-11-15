@@ -1,14 +1,14 @@
 import React from 'react'
 import Header from './components/Header'
 import MovieSwiperSlideNew from './components/MovieSwiperSlideNew'
+import { Outlet } from 'react-router-dom'
+import HeaderNavbar from './components/HeaderNavbar'
 
 const App = () => {
   return (
     <div className='bg-black'>
-      <Header />
-     <div className='relative -mt-10'>
-       <MovieSwiperSlideNew />
-     </div>
+      <HeaderNavbar />
+      <Outlet />
     </div>
   )
 }

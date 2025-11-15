@@ -10,7 +10,7 @@ const Header = () => {
         <div className="h-full w-full bg-gradient-to-b from-black via-black/40 to-black">
           <div className="container mx-auto">
             {/* Nav */}
-            <HeaderNavbar />
+            
             {/* Hero section */}
             <div className='h-[550px] w-full flex flex-col justify-center'>
               <div className='w-[700px] max-[768px]:w-[500px] max-[520px]:w-fit mx-auto text-center'>
