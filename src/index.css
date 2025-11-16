@@ -5,6 +5,15 @@
     max-width: 90%;
     margin: 0 auto;
 }
+/* Chrome, Safari, Edge uchun */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox uchun */
+html {
+  scrollbar-width: none;
+}
 
 
 @media screen and (max-width:450px) {
